@@ -1274,7 +1274,7 @@ header {
 .typing {
     font-size: 22px;
     margin: 10px 0;
-    color: #4e9cff;
+    color: #ff2d74;
     font-weight: 600;
 }
 
@@ -1342,7 +1342,7 @@ header {
 .about-img img {
     width: 380px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(78, 156, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 45, 116, 0.3);
 }
 
 .about-text h2 {
@@ -1356,7 +1356,7 @@ header {
 
 .about-text h4 {
     font-size: 20px;
-    color: #4e9cff;
+    color: #ff2d74;
     margin-bottom: 15px;
 }
 
@@ -1434,7 +1434,7 @@ header {
 .skill-card i {
     font-size: 50px;
     margin-bottom: 15px;
-    color: #4e9cff;
+    color: #ff2d74;
     transition: 0.3s;
 }
 
@@ -1490,7 +1490,7 @@ header {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(78, 156, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 45, 116, 0.1), transparent);
     transition: 0.5s;
 }
 
@@ -1500,8 +1500,8 @@ header {
 
 .p-box:hover {
     transform: translateY(-15px) scale(1.03);
-    border-color: #4e9cff;
-    box-shadow: 0 15px 40px rgba(78, 156, 255, 0.4);
+    border-color: #ff2d74;
+    box-shadow: 0 15px 40px rgba(255, 45, 116, 0.4);
 }
 
 .p-box h3 {
@@ -1513,10 +1513,10 @@ header {
 
 /* 🔥 PROJECT HIGHLIGHT - BOLD + COLOR */
 .p-box h3 .project-highlight {
-    color: #4e9cff;
+    color: #ff2d74;
     font-weight: 900;
     font-size: 24px;
-    text-shadow: 0 0 10px rgba(78, 156, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 45, 116, 0.5);
 }
 
 .p-box:hover h3 {
@@ -1581,7 +1581,7 @@ header {
 
 .info-item i {
     font-size: 28px;
-    color: #4e9cff;
+    color: #ff2d74;
     margin-top: 5px;
 }
 
@@ -1791,7 +1791,7 @@ footer {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 45, 116, 0.1), transparent);
     transition: 0.6s;
 }
 
@@ -1801,15 +1801,15 @@ footer {
 
 .upcoming-box:hover {
     transform: translateY(-15px) scale(1.03);
-    border-color: #9333ea;
-    box-shadow: 0 20px 50px rgba(147, 51, 234, 0.4);
+    border-color: #ff2d74;
+    box-shadow: 0 20px 50px rgba(255, 45, 116, 0.4);
 }
 
 .upcoming-icon {
     width: 80px;
     height: 80px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, #9333ea, #c084fc);
+    background: linear-gradient(135deg, #ff2d74, #ff6b9d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1833,10 +1833,10 @@ footer {
 }
 
 .upcoming-box h3 .upcoming-highlight {
-    color: #c084fc;
+    color: #ff6b9d;
     font-weight: 900;
     font-size: 26px;
-    text-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
+    text-shadow: 0 0 15px rgba(255, 45, 116, 0.6);
 }
 
 .upcoming-box p {
@@ -1848,13 +1848,22 @@ footer {
 .upcoming-box .status {
     display: inline-block;
     padding: 8px 20px;
-    background: linear-gradient(135deg, #9333ea, #c084fc);
+    background: linear-gradient(135deg, #ff2d74, #ff6b9d);
     color: #fff;
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upcoming-box .status:hover {
+    background: linear-gradient(135deg, #ff6b9d, #ff2d74);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 45, 116, 0.4);
 }
 
 /* PLACEHOLDER STYLE */
@@ -1983,7 +1992,7 @@ header {
 .typing {
     font-size: 22px;
     margin: 10px 0;
-    color: #4e9cff;
+    color: #ff2d74;
     font-weight: 600;
 }
 
@@ -2051,7 +2060,7 @@ header {
 .about-img img {
     width: 380px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(78, 156, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(255, 45, 116, 0.3);
 }
 
 .about-text h2 {
@@ -2065,7 +2074,7 @@ header {
 
 .about-text h4 {
     font-size: 20px;
-    color: #4e9cff;
+    color: #ff2d74;
     margin-bottom: 15px;
 }
 
@@ -2123,7 +2132,7 @@ header {
 .skill-card i {
     font-size: 50px;
     margin-bottom: 15px;
-    color: #4e9cff;
+    color: #ff2d74;
 }
 
 .skill-card h3 {
