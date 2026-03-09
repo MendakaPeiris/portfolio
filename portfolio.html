@@ -798,21 +798,6 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-body {
-  background: #000;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  line-height: 1.7;
-  padding: 2rem;
-}
-
 /* Figma Projects Section */
 .figma-projects {
   max-width: 1200px;
@@ -1119,15 +1104,20 @@ body {
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i>
+        <div class="header-right">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
 
 
     <!-- HOME SECTION -->
-    <section class="home" id="home">
+    <section class="home section" id="home">
         <div class="home-text">
             <h3>Hello, I'm</h3>
             <h1>Mendaka <span>Peiris</span></h1>
@@ -1151,7 +1141,7 @@ body {
 
 
     <!-- ABOUT SECTION -->
-    <section class="about" id="about">
+    <section class="about section" id="about">
         <div class="about-img">
             <img src="MENDAKA2.jpg">
         </div>
@@ -1180,6 +1170,21 @@ body {
                 <p><strong>Languages:</strong> Sinhala, English</p>
             </div>
 
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="counter" data-target="5">0</span>
+                    <span class="stat-label">Completed Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="counter" data-target="3">0</span>
+                    <span class="stat-label">Figma Designs</span>
+                </div>
+                <div class="stat">
+                    <span class="counter" data-target="2">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+
             <a href="#projects" class="btn">View Projects</a>
         </div>
     </section>
@@ -1187,7 +1192,7 @@ body {
 
 
     <!-- SKILLS SECTION -->
-    <section class="skills" id="skills">
+    <section class="skills section" id="skills">
         <div class="main-text">
             <h2><span>My</span> Skills</h2>
         </div>
@@ -1246,7 +1251,7 @@ body {
 
 
     <!-- COMPLETED PROJECTS -->
-    <section class="projects" id="projects">
+    <section class="projects section" id="projects">
         <div class="main-text">
             <h2><span>Completed</span> Projects</h2>
         </div>
@@ -1304,7 +1309,7 @@ body {
 
   <!-- Figma Projects Section -->
 
-  <section class="figma-projects" id="figma-designs">
+  <section class="figma-projects section" id="figma-designs">
     <h2>Figma Design Projects</h2>
     
 
@@ -1312,7 +1317,7 @@ body {
 <div class="figma-grid">
   
   <!-- F1 Racing App -->
-  <div class="figma-card">
+  <div class="figma-card animate-on-scroll">
     <div class="figma-image-container">
       <div class="figma-badge">Figma Design</div>
       <div class="figma-icon">🏎</div>
@@ -1367,7 +1372,7 @@ body {
   </div>
 
   <!-- Beach Store App -->
-  <div class="figma-card">
+  <div class="figma-card animate-on-scroll">
     <div class="figma-image-container">
       <div class="figma-badge">Figma Design</div>
       <div class="figma-icon">🏖</div>
@@ -1428,7 +1433,7 @@ body {
 
 
     <!-- 🔥 UPCOMING PROJECTS SECTION 🔥 -->
-    <section class="upcoming" id="upcoming">
+    <section class="upcoming section" id="upcoming">
         <div class="main-text">
             <h2><span>Upcoming</span> Projects</h2>
             
@@ -1497,7 +1502,7 @@ body {
 
 
     <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
+    <section class="contact section" id="contact">
         <div class="main-text">
             <h2><span>Contact</span> Me</h2>
         </div>
