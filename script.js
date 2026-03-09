@@ -536,6 +536,10 @@ const CONFIG = {
   navbarShrinkClass: 'navbar-scrolled'
 };
 
+// Add your form endpoint (webhook) here. Replace with your Google Apps Script web app URL
+// or any other endpoint that accepts JSON POST requests.
+CONFIG.formEndpoint = '';
+
 // ================================
 // UTILITY FUNCTIONS
 // ================================
@@ -895,8 +899,34 @@ class FormHandler {
     });
 
     if (isFormValid) {
-      this.showMessage('Message sent successfully!', 'success');
-      this.form.reset();
+      const formData = {};
+      inputs.forEach(input => {
+        if (input.name) formData[input.name] = input.value.trim();
+      });
+      formData.timestamp = new Date().toISOString();
+
+      // If an endpoint is configured, send the data as JSON
+      if (CONFIG.formEndpoint && CONFIG.formEndpoint.length) {
+        try {
+          const resp = await fetch(CONFIG.formEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+          });
+
+          if (!resp.ok) throw new Error(`Network response was not ok (${resp.status})`);
+
+          this.showMessage('Message sent successfully!', 'success');
+          this.form.reset();
+        } catch (err) {
+          console.error('Form submit error:', err);
+          this.showMessage('Failed to send message. Please try again later.', 'error');
+        }
+      } else {
+        // No remote endpoint configured — show success locally (for testing)
+        this.showMessage('Message captured locally (no endpoint configured).', 'success');
+        this.form.reset();
+      }
     }
   }
 
