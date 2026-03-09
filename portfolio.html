@@ -1,0 +1,784 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mendaka Mr Peiris | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+/* Figma Projects Section */
+.figma-projects {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 4rem 1.2rem;
+}
+
+.figma-projects h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #ff2d74;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(255,45,116,0.3);
+}
+
+.figma-subtitle {
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.figma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.figma-card {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.figma-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff2d74, #ff6b9d);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.figma-card:hover::before {
+  transform: scaleX(1);
+}
+
+.figma-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(255,45,116,0.3);
+  border-color: #ff2d74;
+}
+
+.figma-image-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figma-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,45,116,0.9);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.figma-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: rgba(255,45,116,0.1);
+  border-radius: 50%;
+  border: 3px solid rgba(255,45,116,0.3);
+  transition: all 0.3s ease;
+}
+
+.figma-card:hover .figma-icon {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #ff2d74;
+  background: rgba(255,45,116,0.2);
+}
+
+.figma-content {
+  padding: 2rem;
+}
+
+.figma-card h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.figma-category {
+  display: inline-block;
+  color: #ff2d74;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.figma-description {
+  color: #bdbdbd;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.figma-features {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.figma-features li {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+}
+
+.figma-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff2d74;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.figma-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.figma-tag {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.figma-tag:hover {
+  background: #ff2d74;
+  border-color: #ff2d74;
+  transform: translateY(-2px);
+}
+
+.figma-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.figma-btn {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.figma-btn-primary {
+  background: #ff2d74;
+  color: white;
+  border-color: #ff2d74;
+}
+
+.figma-btn-primary:hover {
+  background: #ff5599;
+  border-color: #ff5599;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,45,116,0.4);
+}
+
+.figma-btn-secondary {
+  background: transparent;
+  color: #ff2d74;
+  border-color: #ff2d74;
+}
+
+.figma-btn-secondary:hover {
+  background: rgba(255,45,116,0.1);
+  transform: translateY(-2px);
+}
+
+.figma-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+  border-top: 1px solid #222;
+  margin-top: 1.5rem;
+}
+
+.figma-stat {
+  text-align: center;
+}
+
+.figma-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff2d74;
+  margin-bottom: 0.3rem;
+}
+
+.figma-stat-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .figma-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .figma-projects h2 {
+    font-size: 2.2rem;
+  }
+
+  .figma-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .figma-image-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .figma-links {
+    flex-direction: column;
+  }
+
+  .figma-btn {
+    width: 100%;
+  }
+
+  .figma-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="logo">Mr<span>Peiris</span></a>
+
+        <ul class="navlist">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#upcoming">Upcoming</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="header-right">
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- HOME SECTION -->
+    <section class="home section" id="home">
+        <div class="home-text">
+            <h3>Hello, I'm</h3>
+            <h1>Mendaka <span>Peiris</span></h1>
+            <h5 class="typing"></h5>
+
+            <p>IT Undergraduate at SLIIT | UI/UX Designer | Software Developer</p>
+
+            <div class="social-media">
+                <a href="https://github.com/MendakaPeiris"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mendaka-peiris-644653351"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+
+        <div class="home-img">
+            <img src="mendaka.jpg" alt="Home Image">
+        </div>
+    </section>
+
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+        <div class="about-img">
+            <img src="MENDAKA2.jpg">
+        </div>
+
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>IT Undergraduate | UI/UX Designer | Developer</h4>
+            <p>
+                I'm Mendaka Thathsara Theminda Peiris (known as Mr. Peiris), a dedicated IT undergraduate at SLIIT.
+                I design and build modern applications with clean UI/UX and strong functionality.
+                I love problem-solving, creating digital products, and improving user experiences.
+            </p>
+            
+            <p>
+                With a passion for technology and design, I specialize in creating intuitive user interfaces 
+                and developing robust software solutions. My expertise spans across front-end and back-end 
+                development, with a strong focus on user-centered design principles. I'm constantly learning 
+                new technologies and methodologies to stay at the forefront of the industry.
+            </p>
+
+            <div class="about-details">
+                <p><strong>Education:</strong> Bachelor of Science in Information Technology (BSc IT) - SLIIT</p>
+                <p><strong>Phone:</strong> +94 77 429 2241</p>
+                <p><strong>Email:</strong> thathsaratheminda@gmail.com</p>
+                <p><strong>Location:</strong> Anuradhapura, Sri Lanka</p>
+                <p><strong>Languages:</strong> Sinhala, English</p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="counter" data-target="5">0</span>
+                    <span class="stat-label">Completed Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="counter" data-target="3">0</span>
+                    <span class="stat-label">Figma Designs</span>
+                </div>
+                <div class="stat">
+                    <span class="counter" data-target="2">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+
+
+    <!-- SKILLS SECTION -->
+    <section class="skills section" id="skills">
+        <div class="main-text">
+            <h2><span>My</span> Skills</h2>
+        </div>
+
+        <div class="skills-box">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3><span class="highlight">Software</span> Development</h3>
+                <p class="skill-desc">Full-stack development with modern frameworks and technologies. Building scalable applications with clean code architecture.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-pencil-ruler"></i>
+                <h3><span class="highlight">UI/UX</span> Design</h3>
+                <p class="skill-desc">Creating intuitive and beautiful user interfaces. Focus on user experience, accessibility, and modern design trends.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3><span class="highlight">Project</span> Management</h3>
+                <p class="skill-desc">Leading projects from conception to completion. Agile methodologies, team coordination, and deadline management.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h3><span class="highlight">Critical</span> Thinking</h3>
+                <p class="skill-desc">Analytical problem-solving and strategic planning. Breaking down complex challenges into manageable solutions.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-figma"></i>
+                <h3><span class="highlight">Figma</span> Expert</h3>
+                <p class="skill-desc">Advanced prototyping, component libraries, and design systems. Creating pixel-perfect designs for web and mobile.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3><span class="highlight">Frontend</span> Technologies</h3>
+                <p class="skill-desc">HTML5, CSS3, JavaScript, React, and responsive design. Building interactive and performant web applications.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3><span class="highlight">Database</span> Management</h3>
+                <p class="skill-desc">SQL, database design, and optimization. Working with relational and NoSQL databases for efficient data management.</p>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-git-alt"></i>
+                <h3><span class="highlight">Version</span> Control</h3>
+                <p class="skill-desc">Git, GitHub, and collaborative development workflows. Managing code repositories and team collaboration.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- COMPLETED PROJECTS -->
+    <section class="projects section" id="projects">
+        <div class="main-text">
+            <h2><span>Completed</span> Projects</h2>
+        </div>
+
+        <div class="portfolio-gallery">
+
+              <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Online Event</span>Planning System</h3>
+                <p>A complete event organizing and planning platform.</p>
+                <a href="https://www.linkedin.com/in/mendaka-peiris-644653351" target="_blank" class="status">In github</a>
+                
+            </div>
+
+              <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Ticket Reservation</span> System</h3>
+                <p>Seat selection & fast event ticket booking UX.</p>
+                <a href="https://www.linkedin.com/in/mendaka-peiris-644653351" target="_blank" class="status">In github</a>
+            </div>
+
+
+             <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Recruitment</span> Company System</h3>
+                <p>Applicant tracking & HR workflows.</p>
+                <a href="https://github.com/MendakaPeiris/Web-Project.git" target="_blank" class="status">In github</a>
+            </div>
+
+             <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Habit Tracking</span> App</h3>
+                <p>Track habits, routines, and progress charts.</p>
+                <a href="https://www.linkedin.com/in/mendaka-peiris-644653351" target="_blank" class="status">In github</a>
+            </div>
+
+            <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Formula 1</span> App</h3>
+                <p>Race schedules, winners, standings & tracks.</p>
+                <a href="https://www.linkedin.com/in/mendaka-peiris-644653351" target="_blank" class="status">In github</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Figma Projects Section -->
+
+  <section class="figma-projects section" id="figma-designs">
+    <h2>Figma Design Projects</h2>
+    
+
+
+<div class="figma-grid">
+  
+  <!-- F1 Racing App -->
+  <div class="figma-card animate-on-scroll">
+    <div class="figma-image-container">
+      <div class="figma-badge">Figma Design</div>
+      <div class="figma-icon">🏎</div>
+    </div>
+    <div class="figma-content">
+      <span class="figma-category">Mobile App Design</span>
+      <h3>F1 Racing App</h3>
+      <p class="figma-description">
+        A comprehensive Formula 1 racing application featuring live race tracking, driver statistics, team standings, and real-time race updates. Designed with speed and precision in mind.
+      </p>
+      
+      <ul class="figma-features">
+        <li>Live race tracking with real-time lap data</li>
+        <li>Driver profiles and performance analytics</li>
+        <li>Interactive circuit maps and telemetry</li>
+        <li>Team standings and championship points</li>
+        <li>Push notifications for race events</li>
+      </ul>
+
+      <div class="figma-tags">
+        <span class="figma-tag">Figma</span>
+        <span class="figma-tag">Mobile UI</span>
+        <span class="figma-tag">Sports App</span>
+        <span class="figma-tag">Real-time Data</span>
+      </div>
+
+      <div class="figma-stats">
+        <div class="figma-stat">
+          <span class="figma-stat-value">25+</span>
+          <span class="figma-stat-label">Screens</span>
+        </div>
+        <div class="figma-stat">
+          <span class="figma-stat-value">15</span>
+          <span class="figma-stat-label">Components</span>
+        </div>
+        <div class="figma-stat">
+          <span class="figma-stat-value">iOS/Android</span>
+          <span class="figma-stat-label">Platform</span>
+        </div>
+      </div>
+
+      <div class="figma-links">
+        <a href="https://www.figma.com/design/PFPSMm6dwZ8ZJtVVkpVyro/Lab-Exam-1?node-id=0-1&t=0CGGTHD14BDN3M9f-1" class="figma-btn figma-btn-primary">
+          <span>View Design</span>
+          <span>→</span>
+        </a>
+        <a href="#" class="figma-btn figma-btn-secondary">
+          <span>Case Study</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beach Store App -->
+  <div class="figma-card animate-on-scroll">
+    <div class="figma-image-container">
+      <div class="figma-badge">Figma Design</div>
+      <div class="figma-icon">🏖</div>
+    </div>
+    <div class="figma-content">
+      <span class="figma-category">E-commerce Design</span>
+      <h3>Beach Store App</h3>
+      <p class="figma-description">
+        An elegant e-commerce platform for beach essentials and summer gear. Features a clean, breezy interface with smooth shopping experience and integrated payment solutions.
+      </p>
+      
+      <ul class="figma-features">
+        <li>Product catalog with advanced filtering</li>
+        <li>Shopping cart and wishlist functionality</li>
+        <li>Secure payment gateway integration</li>
+        <li>User reviews and ratings system</li>
+        <li>Order tracking and delivery updates</li>
+      </ul>
+
+      <div class="figma-tags">
+        <span class="figma-tag">Figma</span>
+        <span class="figma-tag">E-commerce</span>
+        <span class="figma-tag">Beach Lifestyle</span>
+        <span class="figma-tag">Shopping</span>
+      </div>
+
+      <div class="figma-stats">
+        <div class="figma-stat">
+          <span class="figma-stat-value">30+</span>
+          <span class="figma-stat-label">Screens</span>
+        </div>
+        <div class="figma-stat">
+          <span class="figma-stat-value">20</span>
+          <span class="figma-stat-label">Components</span>
+        </div>
+        <div class="figma-stat">
+          <span class="figma-stat-value">iOS/Android</span>
+          <span class="figma-stat-label">Platform</span>
+        </div>
+      </div>
+
+      <div class="figma-links">
+        <a href="https://www.figma.com/design/PFPSMm6dwZ8ZJtVVkpVyro/Lab-Exam-1?node-id=0-1&t=0CGGTHD14BDN3M9f-1" class="figma-btn figma-btn-primary">
+          <span>View Design</span>
+          <span>→</span>
+        </a>
+        <a href="#" class="figma-btn figma-btn-secondary">
+          <span>Case Study</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+ 
+
+
+    <!-- 🔥 UPCOMING PROJECTS SECTION 🔥 -->
+    <section class="upcoming section" id="upcoming">
+        <div class="main-text">
+            <h2><span>Upcoming</span> Projects</h2>
+            
+        </div>
+
+        <div class="upcoming-gallery">
+
+            <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3><span class="upcoming-highlight">AI-Powered</span> Chatbot</h3>
+                <p>Smart conversational AI assistant with NLP.</p>
+                <span class="status">In Progress</span>
+            </div>
+
+            <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Fitness</span> Tracker App</h3>
+                <p>Track workouts, calories, and fitness goals.</p>
+                <span class="status">Planning</span>
+            </div>
+
+            <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3><span class="upcoming-highlight">E-Commerce</span> Platform</h3>
+                <p>Full-stack online shopping system with payments.</p>
+                <span class="status">Coming Soon</span>
+            </div>
+
+            <div class="upcoming-box">
+                <div class="upcoming-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3><span class="upcoming-highlight">Machine Learning</span> Model</h3>
+                <p>Predictive analytics and data visualization.</p>
+                <span class="status">Research</span>
+            </div>
+
+            <!-- EMPTY PLACEHOLDER FOR FUTURE PROJECTS -->
+            <div class="upcoming-box placeholder">
+                <div class="upcoming-icon">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <h3>More Projects</h3>
+                <p>Stay tuned for exciting new projects!</p>
+                <span class="status">TBA</span>
+            </div>
+
+            <div class="upcoming-box placeholder">
+                <div class="upcoming-icon">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <h3>More Projects</h3>
+                <p>Stay tuned for exciting new projects!</p>
+                <span class="status">TBA</span>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+        <div class="main-text">
+            <h2><span>Contact</span> Me</h2>
+        </div>
+
+        <div class="contact-content">
+            <!-- LEFT: Contact Info -->
+            <div class="contact-left">
+                <h3>Let's Work Together</h3>
+                <p>I'm available for freelance projects and collaborations. Feel free to reach out!</p>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>thathsaratheminda@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+94 77 429 2241</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Anuradhapura, Sri Lanka</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/MendakaPeiris"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mendaka-peiris-644653351"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Form -->
+            <div class="contact-right">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" rows="6" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Mendaka "Mr Peiris". All Rights Reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
