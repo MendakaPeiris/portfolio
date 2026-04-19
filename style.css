@@ -1193,6 +1193,8 @@ footer {
     .portfolio-gallery {
         grid-template-columns: 1fr;
     }
+}
+
 :root {
     --accent: #e85d8f;
     --accent-mid: #f28ab0;
