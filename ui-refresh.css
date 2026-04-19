@@ -11,7 +11,7 @@
   --ui-border: rgba(255, 255, 255, 0.08);
   --ui-radius: 16px;
   --ui-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
-  --ui-font-display: "Outfit", system-ui, sans-serif;
+  --ui-font-display: "Syne", system-ui, sans-serif;
   --ui-font-body: "Poppins", system-ui, sans-serif;
 }
 
@@ -37,12 +37,36 @@ body {
   font-family: var(--ui-font-body);
   background-color: var(--ui-bg-deep);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -30%, rgba(239, 68, 68, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 100% 20%, rgba(99, 102, 241, 0.06), transparent 45%),
-    radial-gradient(ellipse 50% 40% at 0% 60%, rgba(239, 68, 68, 0.05), transparent 40%);
+    radial-gradient(ellipse 110% 70% at 50% -25%, rgba(239, 68, 68, 0.11), transparent 52%),
+    radial-gradient(ellipse 45% 55% at 100% 85%, rgba(239, 68, 68, 0.05), transparent 45%),
+    radial-gradient(ellipse 40% 50% at 0% 30%, rgba(20, 20, 24, 0.9), transparent 50%);
   background-attachment: fixed;
   color: var(--ui-text);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle scan-line texture — keeps layout readable */
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background: repeating-linear-gradient(
+    -19deg,
+    transparent 0,
+    transparent 3px,
+    rgba(255, 255, 255, 0.04) 3px,
+    rgba(255, 255, 255, 0.04) 4px
+  );
+}
+
+.section,
+footer.site-footer,
+.figma-projects {
+  position: relative;
+  z-index: 1;
 }
 
 h1,
@@ -112,6 +136,48 @@ header.navbar-scrolled {
   padding-top: 120px !important;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -8%;
+  width: min(52%, 480px);
+  height: 150%;
+  background: linear-gradient(155deg, rgba(239, 68, 68, 0.09), transparent 58%);
+  transform: rotate(-10deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-text,
+.home-img {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+}
+
+.hero-chip {
+  font-family: var(--ui-font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 999px;
+  color: var(--ui-muted);
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .home-text h3 {
@@ -148,9 +214,24 @@ header.navbar-scrolled {
   box-shadow: var(--ui-shadow), 0 0 0 1px rgba(239, 68, 68, 0.08);
 }
 
-/* Section titles */
+/* Section titles — signature mark */
+.main-text {
+  position: relative;
+}
+
+.main-text::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+  border-radius: 2px;
+}
+
 .main-text h2 {
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .main-text h2 span {
@@ -172,11 +253,12 @@ header.navbar-scrolled {
   box-shadow: 0 12px 36px rgba(239, 68, 68, 0.35);
 }
 
-/* Skill cards — calmer hover */
+/* Skill cards — asymmetric “studio” cards */
 .skill-card {
-  border-radius: var(--ui-radius) !important;
+  border-radius: 6px 22px 22px 6px !important;
   border: 1px solid var(--ui-border) !important;
-  background: linear-gradient(165deg, rgba(22, 22, 28, 0.95), rgba(12, 12, 14, 0.98)) !important;
+  border-left: 3px solid var(--accent) !important;
+  background: linear-gradient(168deg, rgba(20, 20, 26, 0.96), rgba(8, 8, 10, 0.99)) !important;
 }
 
 .skill-card:hover {
@@ -197,8 +279,9 @@ header.navbar-scrolled {
 /* Project / upcoming cards */
 .upcoming-box,
 .portfolio-gallery .upcoming-box {
-  border-radius: var(--ui-radius) !important;
+  border-radius: 8px 24px 24px 8px !important;
   border: 1px solid var(--ui-border) !important;
+  border-left: 3px solid var(--accent) !important;
 }
 
 /* Contact panel */
@@ -337,6 +420,12 @@ body[data-theme="light"] .home-text h1 {
 
 body[data-theme="light"] .navlist a {
   color: #0f172a;
+}
+
+body[data-theme="light"] .hero-chip {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: #e2e8f0;
+  color: #64748b;
 }
 
 @media (max-width: 768px) {
