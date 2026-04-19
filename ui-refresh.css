@@ -4,8 +4,8 @@
   --ui-bg-deep: #08080a;
   --ui-bg-mid: #101014;
   --ui-surface: #16161c;
-  --ui-accent: #ff2d74;
-  --ui-accent-soft: rgba(255, 45, 116, 0.14);
+  --ui-accent: var(--accent);
+  --ui-accent-soft: rgba(232, 93, 143, 0.14);
   --ui-text: #f4f4f5;
   --ui-muted: #a1a1aa;
   --ui-border: rgba(255, 255, 255, 0.08);
@@ -37,9 +37,9 @@ body {
   font-family: var(--ui-font-body);
   background-color: var(--ui-bg-deep);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -30%, rgba(255, 45, 116, 0.12), transparent 55%),
+    radial-gradient(ellipse 120% 80% at 50% -30%, rgba(232, 93, 143, 0.12), transparent 55%),
     radial-gradient(ellipse 60% 50% at 100% 20%, rgba(99, 102, 241, 0.06), transparent 45%),
-    radial-gradient(ellipse 50% 40% at 0% 60%, rgba(255, 45, 116, 0.05), transparent 40%);
+    radial-gradient(ellipse 50% 40% at 0% 60%, rgba(232, 93, 143, 0.05), transparent 40%);
   background-attachment: fixed;
   color: var(--ui-text);
   -webkit-font-smoothing: antialiased;
@@ -93,7 +93,7 @@ header.navbar-scrolled {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--ui-accent), #ff6b9d);
+  background: linear-gradient(90deg, var(--ui-accent), var(--accent-mid));
   border-radius: 2px;
   transition: width 0.25s ease;
 }
@@ -131,7 +131,7 @@ header.navbar-scrolled {
 }
 
 .home-text h1 span {
-  background: linear-gradient(135deg, var(--ui-accent), #ff8fb8);
+  background: linear-gradient(135deg, var(--ui-accent), var(--accent-mid));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -145,7 +145,7 @@ header.navbar-scrolled {
 
 .home-img img {
   border: 1px solid var(--ui-border);
-  box-shadow: var(--ui-shadow), 0 0 0 1px rgba(255, 45, 116, 0.08);
+  box-shadow: var(--ui-shadow), 0 0 0 1px rgba(232, 93, 143, 0.08);
 }
 
 /* Section titles */
@@ -154,7 +154,7 @@ header.navbar-scrolled {
 }
 
 .main-text h2 span {
-  background: linear-gradient(90deg, var(--ui-accent), #ff8fb8);
+  background: linear-gradient(90deg, var(--ui-accent), var(--accent-mid));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -165,11 +165,11 @@ header.navbar-scrolled {
 .btn {
   border-radius: 999px;
   border: 1px solid transparent;
-  box-shadow: 0 4px 24px rgba(255, 45, 116, 0.25);
+  box-shadow: 0 4px 24px rgba(232, 93, 143, 0.25);
 }
 
 .btn:hover {
-  box-shadow: 0 12px 36px rgba(255, 45, 116, 0.35);
+  box-shadow: 0 12px 36px rgba(232, 93, 143, 0.35);
 }
 
 /* Skill cards — calmer hover */
@@ -307,7 +307,7 @@ button:focus-visible {
   }
 
   .menu-icon.active {
-    border-color: rgba(255, 45, 116, 0.35);
+    border-color: rgba(232, 93, 143, 0.35);
     color: var(--ui-accent);
   }
 
@@ -320,7 +320,7 @@ button:focus-visible {
 body[data-theme="light"] {
   background-color: #f8fafc;
   background-image:
-    radial-gradient(ellipse 100% 60% at 50% -20%, rgba(255, 45, 116, 0.08), transparent 50%);
+    radial-gradient(ellipse 100% 60% at 50% -20%, rgba(232, 93, 143, 0.08), transparent 50%);
 }
 
 body[data-theme="light"] header {
