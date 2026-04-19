@@ -60,8 +60,10 @@ const utils = {
 class NavbarHandler {
   constructor() {
     this.navbar = document.querySelector('header');
+    this.navlist = document.querySelector('.navlist');
     this.navLinks = document.querySelectorAll('.navlist a');
     this.mobileToggle = document.querySelector('.menu-icon');
+    this.backdrop = document.getElementById('nav-backdrop');
     this.init();
   }
 
@@ -72,6 +74,26 @@ class NavbarHandler {
     this.setupSmoothScroll();
     this.setupMobileMenu();
     this.highlightActiveSection();
+  }
+
+  closeMobileMenu() {
+    if (!this.navlist) return;
+    this.navlist.classList.remove('active');
+    if (this.mobileToggle) this.mobileToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    if (this.backdrop) {
+      this.backdrop.classList.remove('is-visible');
+      this.backdrop.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  syncMenuState() {
+    const open = this.navlist && this.navlist.classList.contains('active');
+    document.body.classList.toggle('menu-open', Boolean(open));
+    if (this.backdrop) {
+      this.backdrop.classList.toggle('is-visible', Boolean(open));
+      this.backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
   }
 
   handleScroll() {
@@ -103,6 +125,9 @@ class NavbarHandler {
             // Update active state
             this.navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+            if (window.matchMedia('(max-width: 768px)').matches) {
+              this.closeMobileMenu();
+            }
           }
         }
       });
@@ -113,12 +138,16 @@ class NavbarHandler {
     if (!this.mobileToggle) return;
 
     this.mobileToggle.addEventListener('click', () => {
-      const navLinks = document.querySelector('.navlist');
-      if (navLinks) {
-        navLinks.classList.toggle('active');
+      if (this.navlist) {
+        this.navlist.classList.toggle('active');
         this.mobileToggle.classList.toggle('active');
+        this.syncMenuState();
       }
     });
+
+    if (this.backdrop) {
+      this.backdrop.addEventListener('click', () => this.closeMobileMenu());
+    }
   }
 
   highlightActiveSection() {
@@ -307,6 +336,10 @@ class ThemeToggle {
   applyTheme(theme) {
     document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    const icon = this.toggle && this.toggle.querySelector('i');
+    if (icon) {
+      icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    }
   }
 
   switchTheme() {
